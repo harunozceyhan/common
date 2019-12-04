@@ -7,7 +7,7 @@ spring:
     cloud:
         consul:
             enabled: true
-            host: localhost
+            host: consul.smart
             port: 8500
             config:
                 enabled: true
@@ -28,13 +28,13 @@ spring:
                     lob:
                         non_contextual_creation: true
     datasource:
-        url: jdbc:postgresql://localhost:5432/postgres
+        url: jdbc:postgresql://postgres-12.smart:5432/postgres
         username: postgres
         password: 1234
         continue-on-error: false
     flyway: 
         locations: classpath:db/migration
-        url: jdbc:postgresql://localhost:5432/postgres
+        url: jdbc:postgresql://postgres-12.smart:5432/postgres
         schemas: postgres
         user: postgres
         password: 1234

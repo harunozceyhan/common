@@ -29,6 +29,10 @@ public class BedenTipi extends BaseEntity {
     @Column(nullable=false, length=10)
     private String kodu;
     @NotNull
+    @Column(nullable=false, length=10)
+    private String descriptionString;
+
+    @NotNull
     @Column(nullable=false)
     private Boolean active;
 
@@ -62,6 +66,14 @@ public class BedenTipi extends BaseEntity {
 
     public void setActive(Boolean active) {
       this.active = active;
+    }
+
+    public String getDescriptionString() {
+      return descriptionString;
+    }
+
+    public void setDescriptionString(String descriptionString) {
+      this.descriptionString = descriptionString;
     }
   
 }
