@@ -1,0 +1,33 @@
+server:
+    port: 8082
+spring:
+    application:
+        id: common-service
+        name: common-service  
+    cloud:
+        consul:
+            enabled: true
+            host: localhost
+            port: 8500
+            config:
+                enabled: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate: 
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                jdbc: 
+                    lob:
+                        non_contextual_creation: true
+    datasource:
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+        password: 1234
+        continue-on-error: false
+    flyway: 
+        locations: classpath:db/migration
+        url: jdbc:postgresql://localhost:5432/postgres
+        schemas: postgres
+        user: postgres
+        password: 1234
