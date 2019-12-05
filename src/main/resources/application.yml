@@ -38,3 +38,6 @@ spring:
         schemas: postgres
         user: postgres
         password: 1234
+feign:
+    hystrix:
+        enabled: true
